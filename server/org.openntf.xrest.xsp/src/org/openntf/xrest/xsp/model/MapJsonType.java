@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Vector;
 
 import org.openntf.xrest.xsp.exec.convertor.MapJsonTypeProcessor;
+import org.openntf.xrest.xsp.exec.convertor.datatypes.BooleanArrayMapJsonTypeProcessor;
 import org.openntf.xrest.xsp.exec.convertor.datatypes.BooleanMapJsonTypeProcessor;
 import org.openntf.xrest.xsp.exec.convertor.datatypes.DateOnlyMapJsonTypeProcessor;
 import org.openntf.xrest.xsp.exec.convertor.datatypes.DateTimeArrayMapJsonTypeProcessor;
@@ -34,11 +35,12 @@ public enum MapJsonType {
 	DATETIME(new DateTimeMapJsonTypeProcessor()), //
 	DATEONLY(new DateOnlyMapJsonTypeProcessor()), //
 	TIMEONLY(new TimeOnlyMapJsonTypeProcessor()), //
+	BOOLEAN(new BooleanMapJsonTypeProcessor()), //
 	ARRAY_OF_STRING(new StringArrayMapJsonTypeProcessor()), //
 	ARRAY_OF_INTEGER(new IntegerArrayMapJsonTypeProcessor()), //
 	ARRAY_OF_DOUBLE(new DoubleArrayMapJsonTypeProcessor()), //
-	ARRY_OF_DATETIME(new DateTimeArrayMapJsonTypeProcessor()), //
-	BOOLEAN(new BooleanMapJsonTypeProcessor());
+	ARRAY_OF_DATETIME(new DateTimeArrayMapJsonTypeProcessor()), //
+	ARRAY_OF_BOOLEAN(new BooleanArrayMapJsonTypeProcessor());
 
 	final MapJsonTypeProcessor processor;
 
