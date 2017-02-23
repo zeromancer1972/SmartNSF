@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Vector;
 
 import org.openntf.xrest.xsp.exec.convertor.MapJsonTypeProcessor;
+import org.openntf.xrest.xsp.exec.convertor.datatypes.BooleanMapJsonTypeProcessor;
 import org.openntf.xrest.xsp.exec.convertor.datatypes.DateOnlyMapJsonTypeProcessor;
 import org.openntf.xrest.xsp.exec.convertor.datatypes.DateTimeArrayMapJsonTypeProcessor;
 import org.openntf.xrest.xsp.exec.convertor.datatypes.DateTimeMapJsonTypeProcessor;
@@ -25,10 +26,19 @@ import lotus.domino.Item;
 import lotus.domino.NotesException;
 
 public enum MapJsonType {
-	DEFAULT(new DefaultMapJsonTypeProcessor()), STRING(new StringMapJsonTypeProcessor()), INTEGER(new IntegerMapJsonTypeProcessor()), DOUBLE(new DoubleMapJsonTypeProcessor()), MIME(
-			new MimeMapJsonTypeProcessor()), DATETIME(new DateTimeMapJsonTypeProcessor()), DATEONLY(new DateOnlyMapJsonTypeProcessor()), TIMEONLY(new TimeOnlyMapJsonTypeProcessor()), ARRAY_OF_STRING(
-					new StringArrayMapJsonTypeProcessor()), ARRAY_OF_INTEGER(new IntegerArrayMapJsonTypeProcessor()), ARRAY_OF_DOUBLE(new DoubleArrayMapJsonTypeProcessor()), ARRY_OF_DATETIME(
-							new DateTimeArrayMapJsonTypeProcessor());
+	DEFAULT(new DefaultMapJsonTypeProcessor()), //
+	STRING(new StringMapJsonTypeProcessor()), //
+	INTEGER(new IntegerMapJsonTypeProcessor()), //
+	DOUBLE(new DoubleMapJsonTypeProcessor()), //
+	MIME(new MimeMapJsonTypeProcessor()), //
+	DATETIME(new DateTimeMapJsonTypeProcessor()), //
+	DATEONLY(new DateOnlyMapJsonTypeProcessor()), //
+	TIMEONLY(new TimeOnlyMapJsonTypeProcessor()), //
+	ARRAY_OF_STRING(new StringArrayMapJsonTypeProcessor()), //
+	ARRAY_OF_INTEGER(new IntegerArrayMapJsonTypeProcessor()), //
+	ARRAY_OF_DOUBLE(new DoubleArrayMapJsonTypeProcessor()), //
+	ARRY_OF_DATETIME(new DateTimeArrayMapJsonTypeProcessor()), //
+	BOOLEAN(new BooleanMapJsonTypeProcessor());
 
 	final MapJsonTypeProcessor processor;
 
@@ -51,6 +61,5 @@ public enum MapJsonType {
 	private MapJsonType(MapJsonTypeProcessor processor) {
 		this.processor = processor;
 	}
-	
-	
+
 }
